@@ -1,30 +1,25 @@
-#include <WiFi.h>
-#include <ArduinoOTA.h>
+#include <WiFi.h>        // For connecting ESP32 to WiFi
+#include <ArduinoOTA.h>  // For enabling over the air updates
 
-const char* ssid = "KINETIC_8a8ea1";  // Change to your WiFi Network name
-const char* password = "UxW5pur2bV";  // Change to your password
-
-const int ledPin = 4;
+const char* ssid = "Your SSID";         // Change to your WiFi Network name
+const char* password = "You Password";  // Change to your password
 
 void setup() {
-  
 
-  pinMode(ledPin, OUTPUT);
+  WiFi.begin(ssid, password);  // Connect to WiFi - defaults to WiFi Station mode
 
-  WiFi.begin(ssid, password);
-  
+  // Ensure WiFi is connected
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
   }
 
-  ArduinoOTA.begin();
+  ArduinoOTA.begin();  // Starts OTA
 }
 
 void loop() {
-  ArduinoOTA.handle();
+  ArduinoOTA.handle();  // Handles a code update request
 
-  digitalWrite(ledPin, HIGH);
-  delay(500);
-  digitalWrite(ledPin, LOW);
-  delay(500);
+  /*
+  All loop you're code goes here.
+  */
 }
