@@ -1,8 +1,8 @@
-#include <WiFi.h>        // For connecting ESP32 to WiFi
 #include <ArduinoOTA.h>  // For enabling over the air updates
+#include <WiFi.h>        // For connecting ESP32 to WiFi
 
 const char* ssid = "Your SSID";         // Change to your WiFi Network name
-const char* password = "You Password";  // Change to your password
+const char* password = "Your Password";  // Change to your password
 
 void setup() {
 
@@ -20,6 +20,6 @@ void loop() {
   ArduinoOTA.handle();  // Handles a code update request
 
   /*
-  All loop you're code goes here.
+  All loop your code goes here.
   */
 }
